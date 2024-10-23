@@ -1,0 +1,12 @@
+# Ignore node_modules, if you ever add npm packages
+node_modules/
+
+# Ignore any MacOS system files
+.DS_Store
+
+# Ignore log files
+*.log
+
+# Ignore IDE settings (adjust for your IDE if necessary)
+.vscode/
+.idea/

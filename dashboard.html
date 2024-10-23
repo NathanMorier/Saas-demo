@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="dashboard-container">
+    <h1>Welcome, <span id="usernameDisplay"></span>!</h1>
+    <button id="logoutBtn">Logout</button>
+
+    <h2>Your Tasks</h2>
+    <ul id="taskList"></ul>
+
+    <input type="text" id="taskTitleInput" placeholder="Task title">
+    <textarea id="taskDescriptionInput" placeholder="Task description"></textarea>
+    <button id="addTaskBtn">Add Task</button>
+  </div>
+
+  <script src="js/dashboard.js"></script>
+</body>
+</html>
