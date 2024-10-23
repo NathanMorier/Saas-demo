@@ -7,6 +7,9 @@ node_modules/
 # Ignore log files
 *.log
 
+# Ignore local server config
+live_server.py
+
 # Ignore IDE settings (adjust for your IDE if necessary)
 .vscode/
 .idea/
