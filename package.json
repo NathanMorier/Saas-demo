@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "gh-pages": "^6.2.0"
+  },
+  "scripts": {
+    "deploy": "gh-pages -d ."
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.45.6"
+  }
+}
