@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
       document.getElementById('signupError').textContent = error.message;
       console.error('Signup error:', error.message);
     } else {
-      document.getElementById('signupMessage').textContent = 'Registration successful! Check your email to verify your account.';
+      document.getElementById('signupMessage').textContent = 'Registration successful! You are free to login now.';
       document.getElementById('signupForm').reset();
     }
   });
