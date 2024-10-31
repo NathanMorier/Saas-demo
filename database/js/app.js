@@ -1,4 +1,3 @@
-// json-data/js/app.js
 import { supabase } from './supabaseClient.js';
 
 document.getElementById('loginForm').addEventListener('submit', async function(e) {
@@ -17,7 +16,7 @@ document.getElementById('loginForm').addEventListener('submit', async function(e
     console.error('Login error:', error.message);
   } else if (data.user) {
     document.getElementById('loginError').textContent = '';
-    localStorage.setItem('user_id', data.user.id); // Store user ID for future use
+    localStorage.setItem('user_id', data.user.id);
     window.location.href = 'dashboard.html';
   }
 });

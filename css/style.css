@@ -5,7 +5,7 @@ body {
   padding: 0;
 }
 
-.login-container, .dashboard-container {
+.portal-container, .login-container, .dashboard-container {
   width: 300px;
   margin: 50px auto;
   padding: 20px;
@@ -15,8 +15,26 @@ body {
 }
 
 h1 {
+  font-size: 25px;
+  line-height: 1.4;
   text-align: center;
   color: #333;
+}
+
+.dashboard-container h1 {
+  margin-bottom: 0;
+}
+
+.portal-container p {
+  font-size: 14px;
+  line-height: 1.4;
+  color: #333;
+}
+
+#usernameDisplay {
+  font-weight: bold;
+  text-align: center;
+  margin-top: 0;
 }
 
 label {
@@ -26,7 +44,7 @@ label {
 }
 
 input {
-  width: calc(100% - 16px);
+  width: calc(100% - 17px);
   padding: 8px;
   margin-bottom: 10px;
   border: 1px solid #ddd;
@@ -34,7 +52,7 @@ input {
 }
 
 textarea {
-  width: calc(100% - 16px);
+  width: calc(100% - 17px);
   padding: 8px;
   margin-bottom: 10px;
   border: 1px solid #ddd;
@@ -42,7 +60,8 @@ textarea {
   font-family: inherit;
 }
 
-button {
+button,
+.button {
   width: 100%;
   padding: 10px;
   background-color: #007BFF;
@@ -52,9 +71,29 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+.button {
+  text-decoration: none;
+}
+
+button:hover,
+.button:hover {
   background-color: #0056b3;
 }
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+  margin-bottom: 20px;
+}
+
+.portal-localstorage,
+.portal-database {
+  text-align: center;
+}
+
+.portal-database {background-color: #dc3545;}
+.portal-database:hover {background-color: #b02a37;}
 
 .success-message,
 .error-message {
