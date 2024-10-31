@@ -4,5 +4,8 @@
   },
   "scripts": {
     "deploy": "gh-pages -d ."
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.45.6"
   }
 }

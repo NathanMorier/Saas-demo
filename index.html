@@ -3,24 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SaaS Task Manager</title>
+  <title>SaaS Task Manager Portal</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <div class="login-container">
-    <h1>Task Manager</h1>
-    <form id="loginForm">
-      <label for="username">Username</label>
-      <input type="text" id="username" required>
+  <div class="portal-container">
+    <h1>Task Manager Portal</h1>
+    <p>Explore two distinct versions of the Task Manager. The first version enables users to create tasks that are saved in the browser's local storage. You can log in using:</p>
+    <p> username: <em>test</em><br>password: <em>password123</em></p>
+    <p>The second version offers a more robust experience, allowing users to register, create a personalized login, and manage tasks stored in an online database. This feature grants users the flexibility to access their tasks from anywhere!</p>
 
-      <label for="password">Password</label>
-      <input type="password" id="password" required>
-
-      <button type="submit">Login</button>
-    </form>
-    <p id="loginError" class="error-message"></p>
+    <div class="button-container">
+      <a href="/localstorage" class="button portal-localstorage">Local Storage</a>
+      <a href="/database" class="button portal-database">Database</a>
+    </div>
   </div>
-
-  <script src="js/app.js"></script>
 </body>
 </html>
