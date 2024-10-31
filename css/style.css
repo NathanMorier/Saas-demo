@@ -56,11 +56,14 @@ button:hover {
   background-color: #0056b3;
 }
 
+.success-message,
 .error-message {
-  color: red;
   font-size: 12px;
   text-align: center;
 }
+
+.success-message {color: green;}
+.error-message {color: red;}
 
 ul {
   list-style-type: none;

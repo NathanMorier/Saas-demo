@@ -1,21 +1,23 @@
+// json-data/js/app.js
 import { supabase } from './supabaseClient.js';
 
 document.getElementById('loginForm').addEventListener('submit', async function(e) {
   e.preventDefault();
 
-  const username = document.getElementById('username').value;
+  const email = document.getElementById('email').value;
   const password = document.getElementById('password').value;
 
-  // Use Supabase auth to sign in
   const { data, error } = await supabase.auth.signInWithPassword({
-    email: username,
-    password: password
+    email,
+    password
   });
 
   if (error) {
     document.getElementById('loginError').textContent = 'Invalid username or password.';
-  } else {
-    localStorage.setItem('username', username);
+    console.error('Login error:', error.message);
+  } else if (data.user) {
+    document.getElementById('loginError').textContent = '';
+    localStorage.setItem('user_id', data.user.id); // Store user ID for future use
     window.location.href = 'dashboard.html';
   }
 });

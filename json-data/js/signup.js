@@ -1,27 +1,25 @@
 import { supabase } from './supabaseClient.js';
 
-const signUpForm = document.getElementById('signupForm');
-signUpForm.addEventListener('submit', async function (e) {
+document.getElementById('signupForm').addEventListener('submit', async function(e) {
   e.preventDefault();
 
-  const email = document.getElementById('signupEmail').value;
-  const password = document.getElementById('signupPassword').value;
+  const username = document.getElementById('username').value;
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('password').value;
 
-  try {
-    const { data, error } = await supabase.auth.signUp({
-      email: email,
-      password: password,
-    });
+  const { user, error } = await supabase.auth.signUp({
+    email,
+    password
+  });
 
-    if (error) {
-      console.error('Sign-up Error:', error.message);
-      document.getElementById('signupError').textContent = error.message;
-    } else {
-      console.log('User signed up successfully:', data);
-      window.location.href = 'index.html'; // Redirect to login or another page after success
-    }
-  } catch (err) {
-    console.error('Unexpected error during sign-up:', err);
-    document.getElementById('signupError').textContent = 'An unexpected error occurred. Please try again later.';
+  if (error) {
+    document.getElementById('signupError').textContent = error.message;
+    console.error('Signup error:', error.message);
+  } else {
+    document.getElementById('signupError').textContent = '';
+    document.getElementById('signupMessage').textContent = 'Registration successful! Check your email to verify your account.';
+
+    // Optionally store the username in a 'users' table
+    await supabase.from('users').insert([{ id: user.id, username }]);
   }
 });
