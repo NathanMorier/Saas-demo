@@ -60,7 +60,7 @@ window.onload = async function() {
     });
   }
 
-  // Add task from supabase and from rendered list tasks
+  // Delete task from supabase and remove from list of tasks
   async function deleteTask(taskId) {
     const { error } = await supabase
       .from('Tasks')
